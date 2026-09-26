@@ -6,20 +6,17 @@ export function Reveal({
   children,
   delay = 0,
   className,
-  as = "div",
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
-  as?: "div" | "li" | "section";
 }) {
   const reduced = useReducedMotion();
-  const Comp = motion[as];
 
-  if (reduced) return <Comp className={className}>{children}</Comp>;
+  if (reduced) return <div className={className}>{children}</div>;
 
   return (
-    <Comp
+    <motion.div
       className={className}
       initial={{ opacity: 0, y: 26, filter: "blur(8px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -27,7 +24,7 @@ export function Reveal({
       transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
-    </Comp>
+    </motion.div>
   );
 }
 
