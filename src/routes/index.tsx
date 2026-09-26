@@ -1,24 +1,50 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Background } from "@/components/portfolio/Background";
+import { Cursor } from "@/components/portfolio/Cursor";
+import { Nav } from "@/components/portfolio/Nav";
+import { Hero } from "@/components/portfolio/Hero";
+import { About } from "@/components/portfolio/About";
+import { Experience } from "@/components/portfolio/Experience";
+import { Projects } from "@/components/portfolio/Projects";
+import { Skills } from "@/components/portfolio/Skills";
+import { Achievements } from "@/components/portfolio/Achievements";
+import { Contact, Footer } from "@/components/portfolio/Contact";
+import { useLenis } from "@/components/portfolio/useLenis";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Aastha — Full Stack Developer & AI/ML Enthusiast";
+const description =
+  "Portfolio of Aastha, a full stack developer and AI/ML enthusiast building RAG systems, analytics platforms and role-based web apps.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  useLenis();
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="relative min-h-screen">
+      <Background />
+      <Cursor />
+      <Nav />
+      <main>
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Achievements />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
