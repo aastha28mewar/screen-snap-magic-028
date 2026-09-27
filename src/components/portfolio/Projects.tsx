@@ -181,6 +181,6 @@ export function Projects() {
           </motion.div>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }
