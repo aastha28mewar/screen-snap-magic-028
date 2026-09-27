@@ -8,7 +8,7 @@ import { scrollToSection } from "./useLenis";
 function RoleTypewriter({ roles }: { roles: string[] }) {
   const reduced = useReducedMotion();
   const [index, setIndex] = useState(0);
-  const [text, setText] = useState(roles[0]);
+  const [text, setText] = useState(roles[0] ?? "");
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
