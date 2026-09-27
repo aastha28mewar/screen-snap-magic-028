@@ -9,7 +9,7 @@ import {
   useMotionTemplate,
 } from "motion/react";
 import { ArrowUpRight, Github } from "lucide-react";
-import { Reveal, Section } from "./Reveal";
+import { Reveal } from "./Reveal";
 import { projects } from "./data";
 
 type Project = (typeof projects)[number];
@@ -129,15 +129,21 @@ export function Projects() {
   const barScale = useTransform(smooth, [0, 1], [0, 1]);
 
   return (
-    <Section
-      id="projects"
-      index="03"
-      title="Selected projects"
-      kicker="Three things I built end to end — keep scrolling, the cards glide sideways."
-      className="!px-0"
-    >
+    <section id="projects" className="relative border-t border-hairline py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-6">
+        <Reveal>
+          <div className="flex items-baseline gap-4">
+            <span className="font-mono text-xs text-primary">03</span>
+            <h2 className="text-3xl font-medium md:text-5xl">Selected projects</h2>
+          </div>
+          <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            Three things I built end to end — keep scrolling, the cards glide sideways.
+          </p>
+        </Reveal>
+      </div>
+
       {/* Mobile / reduced-motion fallback: plain vertical stack */}
-      <div className="grid gap-6 px-6 md:hidden">
+      <div className="mx-auto mt-14 grid max-w-6xl gap-6 px-6 md:hidden">
         {projects.map((p, i) => (
           <Reveal key={p.name} delay={i * 0.08}>
             <ProjectCard project={p} index={i} />
