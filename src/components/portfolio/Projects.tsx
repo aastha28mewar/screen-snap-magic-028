@@ -66,11 +66,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             <motion.li
               key={tech}
               initial={false}
-              animate={
-                reduced
-                  ? undefined
-                  : { x: hovered ? 0 : -6, opacity: hovered ? 1 : 0.65 }
-              }
+              animate={reduced ? false : { x: hovered ? 0 : -6, opacity: hovered ? 1 : 0.65 }}
               transition={{ duration: 0.35, delay: hovered ? i * 0.03 : 0 }}
               className="rounded-full border border-hairline px-2.5 py-1 font-mono text-[11px] text-muted-foreground"
             >

@@ -13,7 +13,7 @@ function RoleTypewriter({ roles }: { roles: string[] }) {
 
   useEffect(() => {
     if (reduced) return;
-    const current = roles[index];
+    const current = roles[index] ?? roles[0]!;
     const done = text === current;
 
     const timeout = window.setTimeout(
@@ -62,8 +62,8 @@ export function Hero() {
         <div className="grid gap-12 md:grid-cols-12 md:items-end">
           <div className="md:col-span-8">
             <motion.p
-              initial={reduced ? undefined : { opacity: 0, y: 10 }}
-              animate={reduced ? undefined : { opacity: 1, y: 0 }}
+              initial={reduced ? false : { opacity: 0, y: 10 }}
+              animate={reduced ? false : { opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground"
             >
@@ -75,8 +75,8 @@ export function Hero() {
                 <motion.span
                   key={i}
                   className="inline-block"
-                  initial={reduced ? undefined : { opacity: 0, y: "0.4em", filter: "blur(10px)" }}
-                  animate={reduced ? undefined : { opacity: 1, y: 0, filter: "blur(0px)" }}
+                  initial={reduced ? false : { opacity: 0, y: "0.4em", filter: "blur(10px)" }}
+                  animate={reduced ? false : { opacity: 1, y: 0, filter: "blur(0px)" }}
                   transition={{ duration: 0.8, delay: 0.1 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
                 >
                   {letter}
@@ -93,8 +93,8 @@ export function Hero() {
                 <motion.span
                   key={i}
                   className="inline-block"
-                  initial={reduced ? undefined : { opacity: 0, y: 14 }}
-                  animate={reduced ? undefined : { opacity: 1, y: 0 }}
+                  initial={reduced ? false : { opacity: 0, y: 14 }}
+                  animate={reduced ? false : { opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.7 + i * 0.09 }}
                 >
                   {w}&nbsp;
@@ -140,7 +140,7 @@ export function Hero() {
 
         <div className="mt-20 flex items-center gap-3 text-xs text-muted-foreground">
           <motion.span
-            animate={reduced ? undefined : { y: [0, 6, 0] }}
+            animate={reduced ? false : { y: [0, 6, 0] }}
             transition={{ duration: 1.8, repeat: Infinity }}
           >
             <ArrowDown className="h-4 w-4" />

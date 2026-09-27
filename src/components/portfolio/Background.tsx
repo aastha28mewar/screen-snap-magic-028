@@ -77,8 +77,8 @@ export function Background() {
 
       for (let i = 0; i < points.length; i++) {
         for (let j = i + 1; j < points.length; j++) {
-          const a = points[i];
-          const b = points[j];
+          const a = points[i]!;
+          const b = points[j]!;
           const d = Math.hypot(a.x - b.x, a.y - b.y);
           if (d < 130) {
             const near = Math.hypot(a.x - pointer.x, a.y - pointer.y) < 200;
