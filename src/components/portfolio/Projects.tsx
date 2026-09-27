@@ -168,7 +168,7 @@ export function Projects() {
           </div>
 
           <motion.div
-            style={reduced ? undefined : { x: trackX }}
+            {...(reduced ? {} : { style: { x: trackX } })}
             className="flex gap-6 pl-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]"
           >
             {projects.map((p, i) => (
