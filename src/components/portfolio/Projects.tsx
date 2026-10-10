@@ -9,6 +9,7 @@ import {
   useMotionTemplate,
 } from "motion/react";
 import { ArrowUpRight, Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
 import { projects } from "./data";
 
@@ -50,10 +51,24 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         hovered ? "border-primary/40 glow-ring" : "border-hairline"
       }`}
     >
-      <div className="flex items-baseline justify-between gap-4">
-        <h3 className="font-display text-xl tracking-tight md:text-2xl">{project.name}</h3>
+      <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-hairline pb-4">
         <span className="font-mono text-[11px] text-muted-foreground">{project.date}</span>
+        <div className="flex items-center gap-2">
+          <Button asChild size="sm" variant="outline" className="border-primary/40 text-primary">
+            <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`Code for ${project.name}`}>
+              <Github /> Code
+            </a>
+          </Button>
+          {project.live ? (
+            <Button asChild size="sm" variant="ghost">
+              <a href={project.live} target="_blank" rel="noopener noreferrer" aria-label={`Live ${project.name}`}>
+                <ArrowUpRight /> Live
+              </a>
+            </Button>
+          ) : null}
+        </div>
       </div>
+      <h3 className="break-words font-display text-xl md:text-2xl">{project.name}</h3>
 
       <dl className="mt-6 space-y-4 text-sm leading-relaxed">
         <div>
@@ -82,26 +97,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         ))}
       </ul>
 
-      <div className="mt-auto flex items-center gap-4 pt-7 text-xs">
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-primary"
-        >
-          <Github className="h-3.5 w-3.5" /> Code
-        </a>
-        {project.live ? (
-          <a
-            href={project.live}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-primary"
-          >
-            <ArrowUpRight className="h-3.5 w-3.5" /> Live
-          </a>
-        ) : null}
-      </div>
     </motion.article>
   );
 }
@@ -137,7 +132,7 @@ export function Projects() {
             <h2 className="text-3xl font-medium md:text-5xl">Selected projects</h2>
           </div>
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
-            Three things I built end to end — keep scrolling, the cards glide sideways.
+             Research assistants, compatibility scoring, and contribution tracking.
           </p>
         </Reveal>
       </div>

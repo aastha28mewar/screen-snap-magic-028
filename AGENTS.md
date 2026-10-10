@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep résumé presentation in a dedicated portfolio section, using an uploaded asset pointer for PDF access so the original document remains available without bundling binaries.

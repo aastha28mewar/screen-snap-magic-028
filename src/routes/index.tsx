@@ -8,6 +8,7 @@ import { Experience } from "@/components/portfolio/Experience";
 import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
 import { Achievements } from "@/components/portfolio/Achievements";
+import { Resume } from "@/components/portfolio/Resume";
 import { Contact, Footer } from "@/components/portfolio/Contact";
 import { useLenis } from "@/components/portfolio/useLenis";
 
@@ -22,6 +23,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -42,6 +45,7 @@ function Index() {
         <Projects />
         <Skills />
         <Achievements />
+        <Resume />
         <Contact />
       </main>
       <Footer />

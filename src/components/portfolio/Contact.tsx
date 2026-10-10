@@ -22,7 +22,7 @@ export function Contact() {
   return (
     <Section
       id="contact"
-      index="06"
+      index="07"
       title="Let's talk"
       kicker="Internships, collaborations, or a half-formed AI idea — I read everything."
     >
