@@ -6,6 +6,7 @@ export const profile = {
   tagline: "I build things that think.",
   email: "aastha.mewar2801@gmail.com",
   phone: "+91 9625100688",
+  resumeUrl: "https://drive.google.com/file/d/1O5Ii05dyIETkJfWOTfzqBdW7kUv1XTq-/view?usp=sharing",
   links: {
     linkedin: "https://linkedin.com/in/aastha-354827323",
     github: "https://github.com/aasthamewar",
