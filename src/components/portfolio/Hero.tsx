@@ -4,7 +4,6 @@ import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail, Code } from "lucide-re
 import { profile } from "./data";
 import { scrollToSection } from "./useLenis";
 import { Button } from "@/components/ui/button";
-import resumeAsset from "@/assets/resume.asset.json";
 
 /** Typewriter that cycles through roles. */
 function RoleTypewriter({ roles }: { roles: string[] }) {
@@ -115,7 +114,7 @@ export function Hero() {
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </button>
                <Button asChild variant="outline" className="h-auto rounded-full px-5 py-3">
-                 <a href={resumeAsset.url} target="_blank" rel="noopener noreferrer">Résumé <ArrowUpRight /></a>
+                 <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer">Résumé <ArrowUpRight /></a>
                </Button>
             </div>
 

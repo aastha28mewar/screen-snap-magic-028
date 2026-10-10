@@ -1,7 +1,6 @@
 import { ArrowUpRight, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import resumeAsset from "@/assets/resume.asset.json";
-import { education } from "./data";
+import { education, profile } from "./data";
 import { Reveal, Section } from "./Reveal";
 
 export function Resume() {
@@ -19,7 +18,7 @@ export function Resume() {
             </div>
           </div>
           <Button asChild className="self-start md:self-auto">
-            <a href={resumeAsset.url} target="_blank" rel="noopener noreferrer">
+            <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer">
               Open résumé <ArrowUpRight />
             </a>
           </Button>
