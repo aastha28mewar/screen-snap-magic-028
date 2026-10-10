@@ -1,3 +1,3 @@
-- [ ] Move project links to card tops.
-- [ ] Align portfolio content and links with the uploaded résumé.
-- [ ] Add an accessible résumé section and verify links.
+- [x] Move project links to card tops.
+- [x] Align portfolio content and links with the uploaded résumé.
+- [x] Add an accessible résumé section and verify links (PDF returns 200; no browser errors).
