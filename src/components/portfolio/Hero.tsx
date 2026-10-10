@@ -3,6 +3,8 @@ import { motion, useReducedMotion } from "motion/react";
 import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail, Code } from "lucide-react";
 import { profile } from "./data";
 import { scrollToSection } from "./useLenis";
+import { Button } from "@/components/ui/button";
+import resumeAsset from "@/assets/resume.asset.json";
 
 /** Typewriter that cycles through roles. */
 function RoleTypewriter({ roles }: { roles: string[] }) {
@@ -13,7 +15,7 @@ function RoleTypewriter({ roles }: { roles: string[] }) {
 
   useEffect(() => {
     if (reduced) return;
-    const current = roles[index] ?? roles[0]!;
+    const current = roles[index] ?? roles[0] ?? "";
     const done = text === current;
 
     const timeout = window.setTimeout(
@@ -112,12 +114,9 @@ export function Hero() {
                 View work
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </button>
-              <a
-                href={`mailto:${profile.email}`}
-                className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm transition-colors hover:border-primary/50 hover:text-primary"
-              >
-                Email me
-              </a>
+               <Button asChild variant="outline" className="h-auto rounded-full px-5 py-3">
+                 <a href={resumeAsset.url} target="_blank" rel="noopener noreferrer">Résumé <ArrowUpRight /></a>
+               </Button>
             </div>
 
             <ul className="mt-8 flex items-center gap-4">

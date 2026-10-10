@@ -1,0 +1,3 @@
+- [ ] Move project links to card tops.
+- [ ] Align portfolio content and links with the uploaded résumé.
+- [ ] Add an accessible résumé section and verify links.
